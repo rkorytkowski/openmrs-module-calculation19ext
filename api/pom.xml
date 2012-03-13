@@ -55,7 +55,7 @@
 		<dependency>
 			<groupId>org.openmrs.test</groupId>
 			<artifactId>openmrs-test</artifactId>
-			<type>jar</type>
+			<type>pom</type>
 		</dependency>
 				
 		<!-- End OpenMRS core -->
