@@ -13,31 +13,57 @@
  */
 package org.openmrs.module.calculation19ext;
 
-
-import org.apache.commons.logging.Log; 
+import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.module.Activator;
+import org.openmrs.module.ModuleActivator;
 
 /**
  * This class contains the logic that is run every time this module is either started or stopped.
  */
-public class Calculation19ExtensionsActivator implements Activator {
+public class Calculation19ExtensionsActivator implements ModuleActivator {
 	
 	protected Log log = LogFactory.getLog(getClass());
-		
+	
 	/**
-	 * @see Activator#startup()
+	 * @see ModuleActivator#willRefreshContext()
 	 */
-	public void startup() {
+	public void willRefreshContext() {
+		log.info("Refreshing Calculation 1.9 Extensions Module");
+	}
+	
+	/**
+	 * @see ModuleActivator#contextRefreshed()
+	 */
+	public void contextRefreshed() {
+		log.info("Calculation 1.9 Extensions Module refreshed");
+	}
+	
+	/**
+	 * @see ModuleActivator#willStart()
+	 */
+	public void willStart() {
 		log.info("Starting Calculation 1.9 Extensions Module");
 	}
 	
 	/**
-	 * @see Activator#shutdown()
+	 * @see ModuleActivator#started()
 	 */
-	public void shutdown() {
-		log.info("Shutting down Calculation 1.9 Extensions Module");
+	public void started() {
+		log.info("Calculation 1.9 Extensions Module started");
 	}
 	
-		
+	/**
+	 * @see ModuleActivator#willStop()
+	 */
+	public void willStop() {
+		log.info("Stopping Calculation 1.9 Extensions Module");
+	}
+	
+	/**
+	 * @see ModuleActivator#stopped()
+	 */
+	public void stopped() {
+		log.info("Calculation 1.9 Extensions Module stopped");
+	}
+	
 }
