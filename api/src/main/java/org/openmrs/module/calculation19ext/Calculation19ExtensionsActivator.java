@@ -21,7 +21,7 @@ import org.openmrs.module.Activator;
 /**
  * This class contains the logic that is run every time this module is either started or stopped.
  */
-public class Calculation19ExtensionsModuleActivator implements Activator {
+public class Calculation19ExtensionsActivator implements Activator {
 	
 	protected Log log = LogFactory.getLog(getClass());
 		
@@ -29,14 +29,14 @@ public class Calculation19ExtensionsModuleActivator implements Activator {
 	 * @see Activator#startup()
 	 */
 	public void startup() {
-		log.info("Starting Calculation 1.9 Extensions Module Module");
+		log.info("Starting Calculation 1.9 Extensions Module");
 	}
 	
 	/**
 	 * @see Activator#shutdown()
 	 */
 	public void shutdown() {
-		log.info("Shutting down Calculation 1.9 Extensions Module Module");
+		log.info("Shutting down Calculation 1.9 Extensions Module");
 	}
 	
 		
