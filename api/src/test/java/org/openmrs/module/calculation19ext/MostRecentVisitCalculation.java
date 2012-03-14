@@ -47,6 +47,13 @@ public class MostRecentVisitCalculation implements PatientCalculation, PatientCa
 	}
 	
 	/**
+	 * @see org.openmrs.calculation.Calculation#setConfiguration(java.lang.String)
+	 */
+	@Override
+	public void setConfiguration(String configuration) {
+	}
+	
+	/**
 	 * @see org.openmrs.calculation.evaluator.patient.PatientCalculationEvaluator#evaluate(org.openmrs.Cohort,
 	 *      org.openmrs.calculation.patient.PatientCalculation, java.util.Map,
 	 *      org.openmrs.calculation.api.patient.PatientCalculationContext)

@@ -20,6 +20,7 @@ import org.openmrs.Visit;
 import org.openmrs.api.context.Context;
 import org.openmrs.calculation.api.patient.PatientCalculationService;
 import org.openmrs.calculation.patient.PatientCalculation;
+import org.openmrs.calculation.provider.ClasspathCalculationProvider;
 import org.openmrs.module.calculation19ext.result.VisitResult;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 
@@ -36,8 +37,10 @@ public class PatientCalculationBehaviorTest extends BaseModuleContextSensitiveTe
 	public void shouldGetAVisitResultAsADateBasedResult() throws Exception {
 		int patientId = 2;
 		Visit expectedVisit = Context.getVisitService().getVisit(3);
-		VisitResult result = (VisitResult) getService().evaluate(patientId,
-		    (PatientCalculation) new TestCalculationProvider().getCalculation("mostRecentVisit", null));
+		VisitResult result = (VisitResult) getService().evaluate(
+		    patientId,
+		    (PatientCalculation) new ClasspathCalculationProvider().getCalculation(
+		        MostRecentVisitCalculation.class.getName(), null));
 		
 		Assert.assertEquals(expectedVisit, result.asType(Visit.class));
 		Assert.assertEquals(expectedVisit.getStartDatetime(), result.getDateOfResult());
